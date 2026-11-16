@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angella Tendo | Project Handover & Documentation</title>
+  <style>
+    :root {
+      --primary: #111A3F;
+      --accent: #00B87C;
+      --text: #334155;
+      --bg: #F8FAFC;
+    }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px;
+      background: white;
+    }
+    h1, h2, h3 { color: var(--primary); margin-top: 1.5em; }
+    h1 { font-size: 2.5em; border-bottom: 3px solid var(--accent); padding-bottom: 10px; }
+    h2 { font-size: 1.8em; border-bottom: 1px solid #E2E8F0; padding-bottom: 5px; margin-top: 2em; }
+    h3 { font-size: 1.3em; color: #1E293B; }
+    p { margin-bottom: 1em; }
+    code {
+      background-color: #F1F5F9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.9em;
+      color: #D946EF;
+    }
+    pre {
+      background-color: #1E293B;
+      color: #F8FAFC;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Consolas', 'Courier New', monospace;
+      line-height: 1.5;
+    }
+    pre code { background-color: transparent; color: inherit; padding: 0; }
+    ul { margin-bottom: 1em; }
+    li { margin-bottom: 0.5em; }
+    .callout {
+      background-color: #E0F2FE;
+      border-left: 4px solid #0284C7;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    .callout-danger {
+      background-color: #FEE2E2;
+      border-left: 4px solid #DC2626;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #E2E8F0;
+    }
+    th { background-color: #F8FAFC; color: var(--primary); font-weight: bold; }
+    .footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #E2E8F0;
+      text-align: center;
+      font-size: 0.9em;
+      color: #64748B;
+    }
+    @media print {
+      body { padding: 0; }
+      h2 { page-break-after: avoid; }
+      pre { page-break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Project Handover Document</h1>
+  <p><strong>Project:</strong> Personal Portfolio Website<br>
+  <strong>Developer:</strong> Angella Tendo<br>
+  <strong>Mentor:</strong> Herman Software Solutions<br>
+  <strong>Date:</strong> November 2026</p>
+
+  <div class="callout">
+    <strong>Welcome, Angella!</strong> This document contains everything you need to know about how your portfolio was built, how it works, and how to update it in the future.
+  </div>
+
+  <h2>1. Technology Stack & Requirements</h2>
+  <p>This portfolio is built using a modern JavaScript stack. To work on this project, you (or any developer) will need the following installed on your machine:</p>
+  <table>
+    <tr><th>Requirement</th><th>Version Used</th><th>Why it's needed</th></tr>
+    <tr><td><strong>Node.js</strong></td><td>v20 LTS or higher</td><td>The runtime environment that runs Next.js.</td></tr>
+    <tr><td><strong>npm</strong></td><td>v10+</td><td>Package manager to install dependencies.</td></tr>
+    <tr><td><strong>Next.js</strong></td><td>v16.4.6</td><td>React framework for routing, SEO, and server-side rendering.</td></tr>
+    <tr><td><strong>Tailwind CSS</strong></td><td>v4</td><td>Utility-first CSS framework for styling.</td></tr>
+    <tr><td><strong>Framer Motion</strong></td><td>v11+</td><td>Library for all the smooth animations.</td></tr>
+    <tr><td><strong>TypeScript</strong></td><td>v5</td><td>Adds strict type checking to JavaScript.</td></tr>
+  </table>
+
+  <h2>2. Folder Structure (Where to find what)</h2>
+  <p>Here is a breakdown of the most important folders and files in the <code>app/</code> directory:</p>
+
+  <h3>📂 `app/` (The Core)</h3>
+  <ul>
+    <li><code>data.ts</code>: <strong>CRITICAL.</strong> This is where all the text for projects and skills lives. If you want to add a new project or skill, you edit this file!</li>
+    <li><code>layout.tsx</code>: The main wrapper for the whole site. It contains the Navbar, Footer, and Google Fonts setup.</li>
+    <li><code>page.tsx</code>: The homepage (Hero section, Stats, Projects, Skills).</li>
+    <li><code>globals.css</code>: Global CSS variables (colors, dark mode setup).</li>
+  </ul>
+
+  <h3>📂 `app/components/` (Building Blocks)</h3>
+  <p>These are reusable React components.</p>
+  <ul>
+    <li><code>ApiConsole.tsx</code>: The interactive API terminal in the Hero section.</li>
+    <li><code>Hero.tsx</code>: The top section of the homepage with your photo and main headline.</li>
+    <li><code>ProjectCard.tsx</code>: The clickable cards for your projects.</li>
+    <li><code>Footer.tsx</code>: The bottom footer with links and contact info.</li>
+  </ul>
+
+  <h3>📂 `app/api/` (The Backend)</h3>
+  <ul>
+    <li><code>contact/route.ts</code>: The secure server route that handles the contact form and sends emails via Brevo. <strong>Never expose your Brevo API key here. It is stored in Vercel.</strong></li>
+  </ul>
+
+  <h3>📂 `public/` (Assets)</h3>
+  <ul>
+    <li><code>angella.jpg</code>: Your profile picture.</li>
+    <li><code>Angella_Tendo_CV.pdf</code>: Your downloadable CV.</li>
+  </ul>
+
+  <h2>3. How Everything Works Together</h2>
+  
+  <h3>A. Routing (How pages load)</h3>
+  <p>Next.js uses "File-based Routing". This means if you create a folder called <code>contact</code> inside <code>app/</code> and put a <code>page.tsx</code> inside it, the URL <code>/contact</code> automatically works.</p>
+  <p>Dynamic routes (like <code>/projects/vatra</code>) use square brackets: <code>app/projects/[slug]/page.tsx</code>. The code inside reads the <code>[slug]</code> from the URL to find the matching project in <code>data.ts</code>.</p>
+
+  <h3>B. Forms and Emails</h3>
+  <p>When someone fills out the contact form, it sends a POST request to <code>/api/contact</code>. That route sanitizes the data, checks for spam (honeypot), and uses the Brevo API key (stored in Vercel's Environment Variables) to send you an email.</p>
+
+  <h3>C. SEO & Metadata</h3>
+  <p>SEO is handled in <code>app/layout.tsx</code> (the <code>metadata</code> object) and via auto-generated files like <code>sitemap.ts</code> and <code>robots.ts</code>. The <code>opengraph-image.tsx</code> file automatically generates the image you see when sharing the link on WhatsApp or LinkedIn.</p>
+
+  <h2>4. How to Make Changes (The Workflow)</h2>
+  <p>If you want to update the site, follow this exact workflow:</p>
+  <ol>
+    <li><strong>Make the change:</strong> Open VS Code, edit the files (e.g., add a project to <code>data.ts</code>).</li>
+    <li><strong>Test Locally:</strong> Open your terminal and run <code>npm run dev</code>. Check <code>http://localhost:3000</code> to see if it looks correct.</li>
+    <li><strong>Push to GitHub:</strong> Run these commands in your terminal:
+      <pre><code>git add .
+git commit -m "Describe what you changed"
+git push origin main</code></pre>
+    </li>
+    <li><strong>Automatic Deployment:</strong> Vercel is connected to your GitHub repository. As soon as you push, Vercel will automatically rebuild and update the live website in ~60 seconds.</li>
+  </ol>
+
+  <div class="callout-danger">
+    <strong>Important Rule:</strong> Never commit your <code>.env.local</code> file to GitHub! It contains your secret API keys. The <code>.gitignore</code> file prevents this, but always double-check.
+  </div>
+
+  <h2>5. Common Tasks</h2>
+  
+  <h3>How do I update my phone number or WhatsApp link?</h3>
+  <ol>
+    <li>For the footer: Open <code>app/components/Footer.tsx</code> and search for <code>+256</code>.</li>
+    <li>For the floating WhatsApp button: Open <code>app/components/FloatingButtons.tsx</code> and look for <code>whatsappNumber</code>.</li>
+  </ol>
+
+  <h3>How do I add a new project?</h3>
+  <ol>
+    <li>Open <code>app/data.ts</code>.</li>
+    <li>Scroll to <code>export const projects = [...]</code>.</li>
+    <li>Copy an existing block and paste it at the top. Edit the <code>slug</code> (URL), <code>title</code>, <code>description</code>, and <code>details</code>.</li>
+  </ol>
+
+  <h2>6. Deployment Details</h2>
+  <ul>
+    <li><strong>Hosting:</strong> Vercel</li>
+    <li><strong>Repository:</strong> GitHub (Herman Software Solutions Organization)</li>
+    <li><strong>Domain:</strong> <code>tendo-angella-portfolio.vercel.app</code></li>
+    <li><strong>Email Delivery:</strong> Brevo API (Free Tier)</li>
+  </ul>
+
+  <div class="footer">
+    <p>Documentation generated by Herman Software Solutions.<br>
+    Built with care for Angella Tendo.</p>
+  </div>
+
+</body>
+</html>
