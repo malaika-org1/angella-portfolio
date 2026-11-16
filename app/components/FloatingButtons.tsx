@@ -34,7 +34,7 @@ export default function FloatingButtons() {
   };
 
   // Replace this number with her actual WhatsApp number (include country code, no +)
-  const whatsappNumber = "256700000000"; 
+  const whatsappNumber = "256776317493"; 
   const whatsappMessage = encodeURIComponent("Hello Angella, I saw your portfolio and I'd like to discuss a project.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

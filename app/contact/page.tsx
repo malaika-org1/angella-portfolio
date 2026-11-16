@@ -73,7 +73,7 @@ export default function ContactPage() {
                   </div>
                   <div className="flex gap-4">
                     <div className="bg-hero text-mint p-3 rounded-xl shrink-0 h-fit"><Phone size={24} /></div>
-                    <div><h3 className="font-bold text-ink">Phone</h3><a href="tel:+256700000000" className="text-mint hover:underline text-sm mt-1 block">+256 700 000 000</a></div>
+                    <div><h3 className="font-bold text-ink">Phone</h3><a href="tel:+256776317493" className="text-mint hover:underline text-sm mt-1 block">+256 776 317 493</a></div>
                   </div>
                   <div className="flex gap-4">
                     <div className="bg-hero text-mint p-3 rounded-xl shrink-0 h-fit"><Clock size={24} /></div>
