@@ -105,7 +105,6 @@ export default function Footer() {
       {/* Copyright Bar */}
       <div className="max-w-6xl mx-auto px-6 pt-8 border-t border-hero-ink/10 text-center text-sm text-hero-muted flex flex-col md:flex-row justify-between items-center gap-4">
         <p>© {year || 2026} Angella Tendo. All rights reserved.</p>
-        <p>Built with Next.js & Tailwind.</p>
       </div>
     </footer>
   );
